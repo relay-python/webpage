@@ -62,7 +62,10 @@
     <section class="section" id="usage">
       <h2>Quick Start</h2>
       <p>{{ .description }}</p>
-      <pre><code>{{ .snippet }}</code></pre>
+      <div class="code-block">
+        <button class="copy-button" type="button" data-copy-target="quickstart-code">Copy</button>
+        <pre><code id="quickstart-code">{{ .snippet }}</code></pre>
+      </div>
       <p class="meta">Install with <code>{{ .install }}</code></p>
     </section>
   {{ end }}
