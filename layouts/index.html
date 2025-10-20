@@ -1,0 +1,105 @@
+{{ define "main" }}
+  <section class="hero" id="overview">
+    <span class="tagline">LLM provider bridge for Python</span>
+    <h1>{{ .Site.Title }}</h1>
+    <p>{{ .Params.lead | default "Relay gives you a single, predictable interface for working with OpenAI, Anthropic, and future providers." }}</p>
+    <div>
+      <a class="cta" href="{{ .Site.Params.repo_url }}">View on GitHub</a>
+    </div>
+  </section>
+
+  {{ if .Params.cards }}
+    <section class="section" id="features">
+      <h2>Key Capabilities</h2>
+      <div class="grid grid-3">
+        {{ range .Params.cards }}
+          <div class="card">
+            <h3>{{ .title }}</h3>
+            <p>{{ .description }}</p>
+          </div>
+        {{ end }}
+      </div>
+    </section>
+  {{ end }}
+
+  {{ if .Params.overview }}
+    <section class="section">
+      <div class="grid grid-2">
+        <div>
+          <h2>Why Relay?</h2>
+          <p>{{ index .Params.overview 0 }}</p>
+        </div>
+        <div>
+          <h2>Design Principles</h2>
+          <p>{{ index .Params.overview 1 }}</p>
+        </div>
+      </div>
+    </section>
+  {{ end }}
+
+  {{ with .Params.providers }}
+    <section class="section" id="providers">
+      <h2>Provider Support</h2>
+      <div class="grid grid-2">
+        {{ range . }}
+          <div class="card">
+            <h3>{{ .name }}</h3>
+            <p>{{ .summary }}</p>
+            {{ if .highlights }}
+              <ul>
+                {{ range .highlights }}
+                  <li>{{ . }}</li>
+                {{ end }}
+              </ul>
+            {{ end }}
+          </div>
+        {{ end }}
+      </div>
+    </section>
+  {{ end }}
+
+  {{ with .Params.code }}
+    <section class="section" id="usage">
+      <h2>Quick Start</h2>
+      <p>{{ .description }}</p>
+      <pre><code>{{ .snippet }}</code></pre>
+      <p class="meta">Install with <code>{{ .install }}</code></p>
+    </section>
+  {{ end }}
+
+  {{ with .Params.architecture }}
+    <section class="section" id="architecture">
+      <h2>Architecture at a Glance</h2>
+      <div class="grid grid-2">
+        <div>
+          <h3>Flow</h3>
+          <p>{{ .flow }}</p>
+        </div>
+        <div>
+          <h3>Extension Points</h3>
+          <p>{{ .extensibility }}</p>
+        </div>
+      </div>
+    </section>
+  {{ end }}
+
+  {{ with .Params.roadmap }}
+    <section class="section" id="roadmap">
+      <h2>Roadmap &amp; Contribution</h2>
+      <div class="grid grid-2">
+        <div>
+          <h3>Next Up</h3>
+          <ul>
+            {{ range .upcoming }}
+              <li>{{ . }}</li>
+            {{ end }}
+          </ul>
+        </div>
+        <div>
+          <h3>Contributing</h3>
+          <p>{{ .contributing }}</p>
+        </div>
+      </div>
+    </section>
+  {{ end }}
+{{ end }}

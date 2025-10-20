@@ -1,0 +1,10 @@
+baseURL = '/'
+languageCode = 'en'
+title = 'Relay SDK'
+theme = ''
+disableKinds = ['taxonomy', 'term']
+
+[params]
+tagline = 'One interface for every large language model provider.'
+repo_url = 'https://github.com/relay-python/relay'
+install_command = 'pip install relay'
