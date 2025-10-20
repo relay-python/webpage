@@ -1,7 +1,6 @@
 baseURL = '/'
 languageCode = 'en'
 title = 'Relay SDK'
-theme = ''
 disableKinds = ['taxonomy', 'term']
 
 [params]
