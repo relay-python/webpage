@@ -1,4 +1,4 @@
-baseURL = '/'
+baseURL = 'https://relay-python.github.io/webpage/'
 languageCode = 'en'
 title = 'Relay SDK'
 disableKinds = ['taxonomy', 'term']

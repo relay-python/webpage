@@ -6,9 +6,9 @@ This repository contains the Hugo-powered marketing site for the [relay-python/r
 
 1. Install [Hugo Extended](https://gohugo.io/getting-started/installing/) (v0.125.0 or newer).
 2. Clone the repository and install dependencies (none beyond Hugo itself).
-3. Run a local preview server:
+3. Run a local preview server (override the production base URL so assets resolve locally):
    ```bash
-   hugo server --buildDrafts
+   hugo server --buildDrafts --baseURL http://localhost:1313/
    ```
    The site will be available at <http://localhost:1313>.
 
